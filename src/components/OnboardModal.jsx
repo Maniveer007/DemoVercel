@@ -40,7 +40,7 @@ const OnboardModal = () => {
               You don't have Metamask Wallet installed!
             </p>
             <CustomButton
-              title="Download Core"
+              title="Download Metamask"
               handleClick={() => window.open('https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?pli=1', '_blank')}
             />
           </>

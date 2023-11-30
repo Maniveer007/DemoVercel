@@ -8,6 +8,7 @@ import { useGlobalContext } from '../context';
 import { attack, attackSound, defense, defenseSound, player01 as player01Icon, player02 as player02Icon } from '../assets';
 import { playAudio } from '../utils/animation.js';
 import { ethers } from 'ethers';
+import { createInstance ,initFhevm } from 'fhevmjs';
 
 const Battle = () => {
   const { contract, gameData, battleGround, walletAddress, setErrorMessage, showAlert, setShowAlert, player1Ref, player2Ref,instance,publickey } = useGlobalContext();
@@ -28,8 +29,10 @@ const Battle = () => {
       to: "0x0000000000000000000000000000000000000044",
     });
     
-    await window.fhevm.initFhevm();
-    const instance =await window.fhevm.createInstance({ chainId, publicKey })
+    // await window.fhevm.initFhevm();
+    initFhevm();
+    
+    const instance =await createInstance({ chainId, publicKey })
     const contractaddress=contract.address
    
     const token=instance.generateToken({
