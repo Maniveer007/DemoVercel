@@ -69,6 +69,7 @@ export const createEventListeners = ({ navigate, contract, provider, walletAddre
   const BattleMoveEventFilter = contract.filters.BattleMove();
   AddNewEvent(BattleMoveEventFilter, provider, ({ args }) => {
     console.log('Battle move initiated!', args);
+    setUpdateGameData((prevUpdateGameData) => prevUpdateGameData + 1);
   });
 
   const RoundEndedEventFilter = contract.filters.RoundEnded();

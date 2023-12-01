@@ -8,7 +8,9 @@ import { GlobalContextProvider } from './context';
 import './index.css';
 import { Buffer } from 'buffer'
 
+
 globalThis.Buffer = Buffer
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
